@@ -7,10 +7,10 @@ import org.apache.spark.rdd.RDD
 import sys.process._
 
 //load local data to hdfs
-"hdfs dfs -put data/sample_movielens_data.txt /tmp" !
+// "hdfs dfs -put data/sample_movielens_data.txt /tmp" !
 
 //configurable parameters
-val input = "/tmp/sample_movielens_data.txt" //needs to match location in hdfs
+val input = "/tmp/05_ml_demo/sample_movielens_data.txt" //needs to match location in hdfs
 val kryo = false
 
 //ALS implementation parameters:
