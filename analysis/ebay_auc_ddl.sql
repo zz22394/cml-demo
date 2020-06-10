@@ -1,3 +1,6 @@
+drop table ebay_auc;
+
+
 CREATE EXTERNAL TABLE IF NOT EXISTS ebay_auc(
     auctionid  String,
     bid  Float,
