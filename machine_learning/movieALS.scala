@@ -1,3 +1,11 @@
+/*
+ * MovieLensサイトが公開しているデータに基づいて作った予測モデルです。
+ * 入力値は
+ * 利用者ID::映画ID::評価点数
+ * Inputデータに基づいてトレーニングして、最後出来たモデルで、
+ * 利用者IDと映画IDを入れて、評価点数を予測する
+ */
+
 import scala.collection.mutable
 
 import org.apache.log4j.{Level, Logger}
@@ -10,6 +18,9 @@ import sys.process._
 // "hdfs dfs -put data/sample_movielens_data.txt /tmp" !
 
 //configurable parameters
+
+// データ読み込み
+
 val input = "/tmp/05_ml_demo/sample_movielens_data.txt" //needs to match location in hdfs
 val kryo = false
 
