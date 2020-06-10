@@ -20,7 +20,6 @@ import sys.process._
 //configurable parameters
 
 // データ読み込み
-
 val input = "/tmp/05_ml_demo/sample_movielens_data.txt" //needs to match location in hdfs
 val kryo = false
 
@@ -105,5 +104,6 @@ val rmse = computeRmse(model, test, implicitPrefs)
 
 println(s"Test RMSE = $rmse.")
 
+// 利用者IDと映画IDをパラメータとして入れて、評価点数を予測
 //to get a prediction, enter the user (id) and movie (id) to get a predicted rating.
 model.predict(3,51)
