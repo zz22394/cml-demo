@@ -72,6 +72,7 @@ val numMovies = ratings.map(_.product).distinct().count()
 
 println(s"Got $numRatings ratings from $numUsers users on $numMovies movies.")
 
+// 入力データをトレーニングデータとテストデータに分割
 //let's create a training and testing
 val splits = ratings.randomSplit(Array(0.8, 0.2))
 val training = splits(0).cache()
@@ -96,6 +97,7 @@ println(s"Training: $numTraining, test: $numTest.")
 //have split the rating into two separate cached sets, can free up this space
 ratings.unpersist(blocking = false)
 
+// トレーニング処理
 //use trainImplicit for implicit data
 val model = ALS.train(training, rank, numIterations, 0.01)
 
